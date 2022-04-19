@@ -1,6 +1,6 @@
-# 1523
-# https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/
+# 191
+# https://leetcode.com/problems/number-of-1-bits/
 
 class Solution:
-    def countOdds(self, low: int, high: int) -> int:
-        return (high - low + (low % 2) + (high % 2)) // 2
+    def hammingWeight(self, n: int) -> int:
+        return bin(n)[2:].count("1")

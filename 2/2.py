@@ -1,4 +1,4 @@
-# 1491
+# 1281
 # https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
 
 class Solution:
