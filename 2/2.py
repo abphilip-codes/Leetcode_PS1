@@ -1,6 +1,11 @@
 # 1281
-# https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
+# https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
 
 class Solution:
-    def average(self, salary: List[int]) -> float:
-        return sum(sorted(salary)[1:-1])/(len(salary)-2)
+    def subtractProductAndSum(self, n: int) -> int:
+        s, p = 0, 1
+        while(n>0):
+            s+=n%10
+            p*=n%10
+            n//=10
+        return p-s
