@@ -1,11 +1,10 @@
-# 1779
-# https://leetcode.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/
+# 1502
+# https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
 
 class Solution:
-    def nearestValidPoint(self, x: int, y: int, points: List[List[int]]) -> int:
-        m, ans = math.inf, -1
-        for z in range(len(points)):
-            if(points[z][0]!=x and points[z][1]!=y): continue
-            d = abs(points[z][0]-x)+abs(points[z][1]-y)
-            if(m>d): m, ans = d, z
-        return ans
+    def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
+        arr.sort()
+        k = arr[1]-arr[0]
+        for z in range(2, len(arr)):
+            if(arr[z]-arr[z-1]!=k): return False
+        return True
