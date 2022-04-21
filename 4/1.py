@@ -1,9 +1,10 @@
-# 976
-# https://leetcode.com/problems/largest-perimeter-triangle/
+# 1822
+# https://leetcode.com/problems/sign-of-the-product-of-an-array/
 
 class Solution:
-    def largestPerimeter(self, nums: List[int]) -> int:
-        nums.sort()
-        for z in range(len(nums)-3,-1,-1):
-            if(nums[z]+nums[z+1]>nums[z+2]): return sum(nums[z:z+3])
-        return 0
+    def arraySign(self, nums: List[int]) -> int:
+        n=0
+        for z in nums:
+            if(z==0): return 0
+            if(z<0): n+=1
+        return 1 if(n%2==0) else -1
