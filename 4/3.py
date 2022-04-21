@@ -1,11 +1,15 @@
-# 1779
-# https://leetcode.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/
+# 202
+# https://leetcode.com/problems/happy-number/
 
 class Solution:
-    def nearestValidPoint(self, x: int, y: int, points: List[List[int]]) -> int:
-        m, ans = math.inf, -1
-        for z in range(len(points)):
-            if(points[z][0]!=x and points[z][1]!=y): continue
-            d = abs(points[z][0]-x)+abs(points[z][1]-y)
-            if(m>d): m, ans = d, z
-        return ans
+    def isHappy(self, n: int) -> bool:
+        s=set()
+        while(True):
+            k=0
+            while(n):
+                k+=(n%10)**2
+                n//=10
+            if k in s: return False
+            if(k==1): return True
+            s.add(k)
+            n=k
