@@ -1,10 +1,21 @@
-# 1822
-# https://leetcode.com/problems/sign-of-the-product-of-an-array/
+# 589
+# https://leetcode.com/problems/n-ary-tree-preorder-traversal/
+
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
 
 class Solution:
-    def arraySign(self, nums: List[int]) -> int:
-        n=0
-        for z in nums:
-            if(z==0): return 0
-            if(z<0): n+=1
-        return 1 if(n%2==0) else -1
+    def preorder(self, root: 'Node') -> List[int]:
+        if not root: return []
+        s, ans = [root], []
+        while(s):
+            node = s.pop()
+            ans.append(node.val)
+            for c in node.children[::-1]:
+                s.append(c)
+        return ans
