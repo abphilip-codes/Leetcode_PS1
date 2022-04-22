@@ -9,13 +9,15 @@ class Node:
         self.children = children
 """
 
+def k(child, l):
+    if not child: return
+    l.append(child.val)
+    for child in child.children:
+        k(child, l)
+
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        if not root: return []
-        s, ans = [root], []
-        while(s):
-            node = s.pop()
-            ans.append(node.val)
-            for c in node.children[::-1]:
-                s.append(c)
+        ans = []
+        if not root: return ans
+        k(root, ans)
         return ans
