@@ -1,10 +1,13 @@
-# 1502
-# https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
+# 496
+# https://leetcode.com/problems/next-greater-element-i/
 
 class Solution:
-    def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
-        arr.sort()
-        k = arr[1]-arr[0]
-        for z in range(2, len(arr)):
-            if(arr[z]-arr[z-1]!=k): return False
-        return True
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        d, s = {}, []
+        for z in nums2:
+            while s and z>s[-1]:
+                d[s.pop()] = z
+            s.append(z)  
+        for i, z in enumerate(nums1):
+            nums1[i] = d.get(z,-1)
+        return nums1
