@@ -1,23 +1,11 @@
-# 589
-# https://leetcode.com/problems/n-ary-tree-preorder-traversal/
-
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
-"""
-
-def k(child, l):
-    if not child: return
-    l.append(child.val)
-    for child in child.children:
-        k(child, l)
+# 1588
+# https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
 
 class Solution:
-    def preorder(self, root: 'Node') -> List[int]:
-        ans = []
-        if not root: return ans
-        k(root, ans)
+    def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+        ans=0
+        for z in range(len(arr)+1):
+            for y in range(z):
+                if(len(arr[y:z])%2!=0):
+                    ans+=sum(arr[y:z])
         return ans
