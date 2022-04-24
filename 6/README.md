@@ -1,1 +1,1 @@
-# Programming Skills I: Day 6
+# Programming Skills I: Day 6 
