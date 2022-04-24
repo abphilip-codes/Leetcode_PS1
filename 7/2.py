@@ -2,12 +2,8 @@
 # https://leetcode.com/problems/reshape-the-matrix/
 
 class Solution:
-    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        d, s = {}, []
-        for z in nums2:
-            while s and z>s[-1]:
-                d[s.pop()] = z
-            s.append(z)  
-        for i, z in enumerate(nums1):
-            nums1[i] = d.get(z,-1)
-        return nums1
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        m, n = len(mat), len(mat[0])
+        if m * n != r * c: return mat
+        arr = [mat[row][col] for row in range(m) for col in range(n)]
+        return [arr[i:i + c] for i in range(0, r * c, c)]
