@@ -1,13 +1,14 @@
-# 496
-# https://leetcode.com/problems/next-greater-element-i/
+# 283
+# https://leetcode.com/problems/move-zeroes/
 
 class Solution:
-    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        d, s = {}, []
-        for z in nums2:
-            while s and z>s[-1]:
-                d[s.pop()] = z
-            s.append(z)  
-        for i, z in enumerate(nums1):
-            nums1[i] = d.get(z,-1)
-        return nums1
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        s=0
+        for z in range(len(nums)):
+            if not nums[s]:
+                nums.pop(s)
+                nums.append(0)
+            else: s+=1
