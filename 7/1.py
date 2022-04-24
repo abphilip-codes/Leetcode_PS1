@@ -1,5 +1,5 @@
-# 1588
-# https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+# 1572
+# https://leetcode.com/problems/matrix-diagonal-sum/
 
 class Solution:
     def sumOddLengthSubarrays(self, arr: List[int]) -> int:

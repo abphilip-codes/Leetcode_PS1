@@ -1,5 +1,5 @@
-# 496
-# https://leetcode.com/problems/next-greater-element-i/
+# 566
+# https://leetcode.com/problems/reshape-the-matrix/
 
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
