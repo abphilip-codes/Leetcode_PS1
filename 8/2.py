@@ -1,14 +1,11 @@
-# 283
-# https://leetcode.com/problems/move-zeroes/
+# 1678
+# https://leetcode.com/problems/goal-parser-interpretation/
 
 class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        s=0
-        for z in range(len(nums)):
-            if not nums[s]:
-                nums.pop(s)
-                nums.append(0)
-            else: s+=1
+    def interpret(self, command: str) -> str:
+        ans, z, k = '', 0, command
+        while(z<len(command)):
+            if(k[z]=='G'): ans, z = ans+'G', z+1
+            elif(k[z:z+2]=='()'): ans, z = ans+'o', z+2
+            else: ans, z = ans+'al', z+4
+        return ans
