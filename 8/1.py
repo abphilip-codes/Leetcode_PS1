@@ -1,11 +1,8 @@
-# 1588
-# https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+# 1768
+# https://leetcode.com/problems/merge-strings-alternately/
 
 class Solution:
-    def sumOddLengthSubarrays(self, arr: List[int]) -> int:
-        ans=0
-        for z in range(len(arr)+1):
-            for y in range(z):
-                if(len(arr[y:z])%2!=0):
-                    ans+=sum(arr[y:z])
-        return ans
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        l = min(len(word1), len(word2))
+        k = [word1[z] + word2[z] for z in range(l)]
+        return "".join(k) + word1[l:] + word2[l:]
