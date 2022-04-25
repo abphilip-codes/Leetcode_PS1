@@ -3,6 +3,8 @@
 
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
-        for z in s:
-            if(z in t): t = t.replace(z,'',1)
-        return t
+        s1 = sorted(list(s))
+        t1 = sorted(list(t))
+        for z in range(len(s1)):
+            if(s1[z]!=t1[z]): return t1[z]
+        else: return t1[-1]
