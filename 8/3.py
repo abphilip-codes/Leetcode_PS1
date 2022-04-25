@@ -1,6 +1,8 @@
-# 1672
-# https://leetcode.com/problems/richest-customer-wealth/
+# 389
+# https://leetcode.com/problems/find-the-difference/
 
 class Solution:
-    def maximumWealth(self, accounts: List[List[int]]) -> int:
-        return max(sum(a) for a in accounts)
+    def findTheDifference(self, s: str, t: str) -> str:
+        for z in s:
+            if(z in t): t = t.replace(z,'',1)
+        return t
