@@ -1,13 +1,12 @@
-# 389
-# https://leetcode.com/problems/find-the-difference/
+# 953
+# https://leetcode.com/problems/verifying-an-alien-dictionary/
 
 import string
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
-        o=dict()
-        for i in range(26):
-            o[order[i]]=string.ascii_lowercase[i]
-        for i,word in enumerate(words):
-            word=[o[c] for c in word]
-            words[i]="".join(word)
-        return words==sorted(words)
+        d = dict()
+        for z in range(26): d[order[z]]=string.ascii_lowercase[z]
+        for z, k in enumerate(words):
+            k = [d[c] for c in k]
+            words[z] = "".join(k)
+        return (words==sorted(words))
