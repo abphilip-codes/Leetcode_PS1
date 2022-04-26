@@ -1,10 +1,13 @@
 # 389
 # https://leetcode.com/problems/find-the-difference/
 
+import string
 class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        s1 = sorted(list(s))
-        t1 = sorted(list(t))
-        for z in range(len(s1)):
-            if(s1[z]!=t1[z]): return t1[z]
-        else: return t1[-1]
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        o=dict()
+        for i in range(26):
+            o[order[i]]=string.ascii_lowercase[i]
+        for i,word in enumerate(words):
+            word=[o[c] for c in word]
+            words[i]="".join(word)
+        return words==sorted(words)
