@@ -1,5 +1,5 @@
-# 1678
-# https://leetcode.com/problems/goal-parser-interpretation/
+# 1309
+# https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/
 
 class Solution:
     def interpret(self, command: str) -> str:
