@@ -1,11 +1,16 @@
 # 876
 # https://leetcode.com/problems/middle-of-the-linked-list/
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
 class Solution:
-    def freqAlphabets(self, s: str) -> str:
-        ans, z = "", 0
-        while(z<len(s)-2):
-            if s[z:z+3].endswith('#'): ans, z = ans+chr(int(s[z:z+2])+96), z+3
-            else: ans, z = ans+chr(int(s[z])+96), z+1
-        for y in range(z,len(s)): ans+=chr(int(s[y])+96)
-        return ans
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        s, f = head, head
+        while(f and f.next):
+            s = s.next
+            f = f.next.next
+        return s
