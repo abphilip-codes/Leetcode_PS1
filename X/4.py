@@ -1,12 +1,19 @@
 # 404
 # https://leetcode.com/problems/sum-of-left-leaves/
 
-import string
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
 class Solution:
-    def isAlienSorted(self, words: List[str], order: str) -> bool:
-        d = dict()
-        for z in range(26): d[order[z]]=string.ascii_lowercase[z]
-        for z, k in enumerate(words):
-            k = [d[c] for c in k]
-            words[z] = "".join(k)
-        return (words==sorted(words))
+    def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+        def f(k,ans,p):
+            if(not k): return 0
+            if(not k.left and not k.right and p==1):
+                ans+=k.val
+                return ans
+            return(f(k.left,ans,1) + f(k.right,ans,0))
+        return f(root,0,0)
