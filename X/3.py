@@ -1,12 +1,15 @@
 # 104
 # https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
-import string
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
 class Solution:
-    def isAlienSorted(self, words: List[str], order: str) -> bool:
-        d = dict()
-        for z in range(26): d[order[z]]=string.ascii_lowercase[z]
-        for z, k in enumerate(words):
-            k = [d[c] for c in k]
-            words[z] = "".join(k)
-        return (words==sorted(words))
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if(root): 
+            return max(self.maxDepth(root.left)+1, self.maxDepth(root.right)+1)
+        return 0
