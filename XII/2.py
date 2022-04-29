@@ -1,5 +1,5 @@
-# 232
-# https://leetcode.com/problems/implement-queue-using-stacks/
+# 303
+# https://leetcode.com/problems/range-sum-query-immutable/
 
 class MyQueue:
 
